@@ -3,7 +3,7 @@
  * @return {number}
  */
 var romanToInt = function(s) {
-    const sym = {
+    const sym = {                           // create a object for the assign a value of each character
         'I': 1,
         'V': 5,
         'X': 10,
@@ -13,21 +13,21 @@ var romanToInt = function(s) {
         'M': 1000
     }
 
-    let result = 0;
+    let result = 0;                        // store a result in this variable 
 
     for (let i = 0; i < s.length; i++) {
-        const cur = sym[s[i]];
+        const cur = sym[s[i]];            // tack a integer value into sym object
         const next = sym[s[i + 1]];
 
-        if (cur < next) {
+        if (cur < next) {                   // ceck condition 
             result += next - cur;
             i++;
-        } else {
+        } else {                                // add on result 
             result += cur;
         }
     }
 
-    return result;
+    return result;                           // return result
 };
 
 
